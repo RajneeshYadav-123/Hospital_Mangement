@@ -10,7 +10,7 @@ import Doctor from './pages/Doctor';
 import AllAppointment from './pages/AllAppointents';
 import AllAppointments from './pages/MyAppointment';
 import BookAppointment from './pages/BookAppointment';
-import  {Signup1}  from './pages/Signup1';
+import  {Signup1}  from './pages/signup1';
 
 function App() {
   return (
