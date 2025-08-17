@@ -12,7 +12,7 @@ export default function AllAppointments() {
     const fetchAppointments = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/appointment/appoint"
+          `${import.meta.env.VITE_PUBLIC_API}/api/v1/appointment/appoint`
         );
 
         const appts = data.appointments || [];
@@ -22,11 +22,11 @@ export default function AllAppointments() {
           appts.map(async (appt) => {
             try {
               const doctorRes = await axios.get(
-                `http://localhost:4000/api/v1/doctor/doctor/${appt.doctorId}`
+                `${import.meta.env.VITE_PUBLIC_API}/api/v1/doctor/doctor/${appt.doctorId}`
               );
               return {
                 ...appt,
-                doctorData: doctorRes.data.data, // attach doctor details
+                doctorData: doctorRes.data.data,
               };
             } catch (error) {
               return { ...appt, doctorData: null };

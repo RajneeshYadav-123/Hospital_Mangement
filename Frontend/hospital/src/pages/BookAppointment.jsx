@@ -26,7 +26,7 @@ export default function BookAppointment() {
       }
 
       const { data } = await axios.post(
-        `http://localhost:4000/api/v1/appointment/appointment/${id}`,
+        `${import.meta.env.VITE_PUBLIC_API}/api/v1/appointment/appointment/${id}`,
         {
           PatientId:token,
           date: form.date,
@@ -90,3 +90,5 @@ export default function BookAppointment() {
     </div>
   );
 }
+
+

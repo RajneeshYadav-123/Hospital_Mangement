@@ -9,7 +9,7 @@ export default function AllAppointment() {
 
   const fetchDoctors = async () => {
     try {
-      const { data } = await axios.get("http://localhost:4000/api/v1/doctor/doctor");
+      const { data } = await axios.get(`${import.meta.env.VITE_PUBLIC_API}/api/v1/doctor/doctor`);
       console.log(data);
       setDoctors(data.data || []);
       setMessage("");

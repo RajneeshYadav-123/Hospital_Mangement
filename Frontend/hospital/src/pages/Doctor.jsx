@@ -16,7 +16,7 @@ export default function DoctorManager() {
 
   const fetchDoctors = async () => {
     try {
-      const { data } = await axios.get("http://localhost:4000/api/v1/doctor/doctor");
+      const { data } = await axios.get(`${import.meta.env.VITE_PUBLIC_API}/api/v1/doctor/doctor`);
       setDoctors(data.data || []);
       setMessage("");
     } catch (err) {
@@ -24,12 +24,14 @@ export default function DoctorManager() {
     }
   };
 
+
   const handleCreateDoctor = async (e) => {
     e.preventDefault();
     if (!imageFile) {
       setMessage("Please select an image");
       return;
     }
+
 
     const formData = new FormData();
     formData.append("name", form.name);
@@ -40,7 +42,7 @@ export default function DoctorManager() {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/api/v1/doctor/doctor",
+        `${import.meta.env.VITE_PUBLIC_API}/api/v1/doctor/doctor`,
         formData
       );
       setMessage(data.message);
@@ -56,7 +58,7 @@ export default function DoctorManager() {
 
     try {
       const { data } = await axios.delete(
-        `http://localhost:4000/api/v1/doctor/doctor/${id}`
+        `${import.meta.env.VITE_PUBLIC_API}/api/v1/doctor/doctor/${id}`
       );
       setMessage(data.message);
       fetchDoctors();

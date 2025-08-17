@@ -5,7 +5,7 @@ export default function Logout() {
 
   const handleLogout = async () => {
     try {
-      const res = await fetch("http://localhost:4000/api/v1/auth/logout", {
+      const res = await fetch(`${import.meta.env.VITE_PUBLIC_API}/api/v1/auth/logout`, {
         method: "POST",
         
       });

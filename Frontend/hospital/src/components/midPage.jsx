@@ -60,3 +60,6 @@ export const Mid2Page = () => {
     </div>
   );
 };
+
+
+

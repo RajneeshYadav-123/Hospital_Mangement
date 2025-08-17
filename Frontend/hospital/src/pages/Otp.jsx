@@ -9,7 +9,7 @@ export default function SendOtp() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:4000/api/v1/auth/sendOTP",
+        `${import.meta.env.VITE_PUBLIC_API}/api/v1/auth/sendOTP`,
         { email },
        
       );

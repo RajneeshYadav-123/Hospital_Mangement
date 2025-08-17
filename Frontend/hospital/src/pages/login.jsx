@@ -10,7 +10,7 @@ export default function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:4000/api/v1/auth/login", {
+      const res = await fetch(`${import.meta.env.VITE_PUBLIC_API}/api/v1/auth/login`, {
         email, password 
       });
       const data = await res.json();

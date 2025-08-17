@@ -11,7 +11,7 @@ export default function ChangePassword() {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/api/v1/auth/changePassword",
+        `${import.meta.env.VITE_PUBLIC_API}/api/v1/auth/changePassword`,
         { oldPassword, newPassword, confirmNewPassword },
       
       );
